@@ -106,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Fakes Include="Fakes\Costura.fakes" />
+    <None Include="FodyWeavers.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +124,9 @@
       <Project>{d38811ae-6daa-4dab-9e14-daab99246b47}</Project>
       <Name>SDK</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ImportGroup Label=".NET DllExport">

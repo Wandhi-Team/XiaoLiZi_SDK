@@ -217,7 +217,7 @@ namespace RobotCore
             json = appInfo.SetPermission(146, "修改支付密码", json);
             json = appInfo.SetPermission(147, "账号搜索", json);
             json = appInfo.SetPermission(148, "添加群_取验证类型", json);
-            //json = appInfo.SetPermission(149, "领取红包", json);//2881框架API未开放，暂无法使用
+            json = appInfo.SetPermission(149, "领取红包", json);//2881框架API未开放，暂无法使用
             json = appInfo.SetPermission(150, "获取红包领取详情", json);
             json = appInfo.SetPermission(151, "取好友文件下载地址", json);
             json = appInfo.SetPermission(152, "删除群成员_批量", json);
