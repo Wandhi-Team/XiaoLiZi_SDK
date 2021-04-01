@@ -21,7 +21,7 @@ namespace RobotCore
         public static string apprun([MarshalAs(UnmanagedType.LPStr)] string pluginkey, [MarshalAs(UnmanagedType.LPStr)] string apidata)
         {
             Common.unityContainer = new UnityContainer();
-            RegisterCore.Register(Common.unityContainer);
+            RegisterCore.Register(Common.unityContainer,AppDomain.CurrentDomain.GetAssemblies());
             API.jsonstr = pluginkey;
             API.pluginkey = apidata;
             if (PermissionConstant.PermiCon.Count == 0)
