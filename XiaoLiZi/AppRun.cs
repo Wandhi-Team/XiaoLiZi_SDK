@@ -52,13 +52,11 @@ namespace RobotCore
         private static void SetAppInfo(AppInfo appInfo)
         {
             appInfo.sdkv = "2.8.8.1";
-            appInfo.appname = "小栗子 C# SDK 空壳";
-            appInfo.author = "福建-兮";
+            appInfo.appname = "集市工具箱";
+            appInfo.author = "Wandhi";
             appInfo.describe = string.Concat(new string[]
             {
-                "这是一个获取确认ID插件",
-                "\r\n",
-                "小栗子官网地址：http://www.xiaolz.cn/"
+                "多功能插件,功能未知"
             });
             appInfo.appv = "1.0.0";
         }
