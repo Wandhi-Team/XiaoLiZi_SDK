@@ -47,7 +47,7 @@ namespace MsTool
             await Task.Run(() =>
              {
                  Info("载入机器人列表");
-                 var qqs = JsonConvert.DeserializeObject<QInfoRoot>(Common.xlzAPI.GetThisQQ());
+                 var qqs = JsonConvert.DeserializeObject<QInfoRoot>(Common.api.GetThisQQ());
                  foreach (var item in qqs.QQlist)
                  {
                      var k = $"{item.Key}({item.Value.昵称})";
@@ -75,7 +75,7 @@ namespace MsTool
                 var groups = txt_Groups.Lines;
                 foreach (var item in groups)
                 {
-                    var res = Common.xlzAPI.AddGroupEvent(qq, long.Parse(item), "");
+                    var res = Common.api.AddGroupEvent(qq, long.Parse(item), "");
                     Info($"加群[{item}]:{res}");
                 }
 
@@ -120,7 +120,7 @@ namespace MsTool
                       return;
                   }
 
-                  var groups = Common.xlzAPI.Getgrouplist(qq);
+                  var groups = Common.api.Getgrouplist(qq);
                   Groups = new List<Group>();
                   foreach (var item in groups)
                   {
@@ -166,7 +166,7 @@ namespace MsTool
 
                 foreach (var item in Groups.Where(a => a.Checked))
                 {
-                    var res = Common.xlzAPI.QuitGroupEvent(item.QQ, item.GroupID);
+                    var res = Common.api.QuitGroupEvent(item.QQ, item.GroupID);
                     Info($"退群[{item.GroupID}]:{res}");
                 }
 

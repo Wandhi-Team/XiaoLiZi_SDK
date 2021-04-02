@@ -1673,8 +1673,8 @@ namespace SDK.Core
         /// <returns></returns>
         public string SendFriendImage(long thisQQ, long friendQQ, string picpath, bool is_flash, int wide = 0, int high = 0, bool cartoon = false)
         {
-            string piccode = Common.xlzAPI.UploadFriendImageEvent(thisQQ, friendQQ, picpath, is_flash, wide, high, cartoon);
-            return Common.xlzAPI.SendPrivateMessage(thisQQ, friendQQ, piccode);
+            string piccode = Common.api.UploadFriendImageEvent(thisQQ, friendQQ, picpath, is_flash, wide, high, cartoon);
+            return Common.api.SendPrivateMessage(thisQQ, friendQQ, piccode);
         }
         /// <summary>
         /// 上传好友图片
@@ -1765,8 +1765,8 @@ namespace SDK.Core
         /// <returns>成功返回图片代码</returns>
         public string SendGroupImage(long thisQQ, long groupQQ, string picpath, bool is_flash, int wide = 0, int high = 0, bool cartoon = false)
         {
-            string piccode = Common.xlzAPI.UploadGroupImage(thisQQ, groupQQ, picpath, is_flash, wide, high, cartoon);
-            return Common.xlzAPI.SendGroupMessage(thisQQ, groupQQ, piccode);
+            string piccode = Common.api.UploadGroupImage(thisQQ, groupQQ, picpath, is_flash, wide, high, cartoon);
+            return Common.api.SendGroupMessage(thisQQ, groupQQ, piccode);
         }
 
         /// <summary>
@@ -2662,8 +2662,8 @@ namespace SDK.Core
         /// <param name="pskey"></param>
         public void GetCookie(long thisQQ, string domin, ref string retCookie, ref string skey, ref string pskey)
         {
-            skey = Common.xlzAPI.GetSKey(thisQQ, domin);
-            pskey = Common.xlzAPI.GetPSKeyEvent(thisQQ, domin);
+            skey = Common.api.GetSKey(thisQQ, domin);
+            pskey = Common.api.GetPSKeyEvent(thisQQ, domin);
             retCookie = $"uin=o{thisQQ}; skey={skey}; pt2gguin=o{thisQQ}; p_uin=o{thisQQ}; p_skey={pskey};";
         }
         /// <summary>
@@ -2673,8 +2673,8 @@ namespace SDK.Core
         /// <param name="domin"></param>
         public string GetCookie(long thisQQ, string domin)
         {
-            string skey = Common.xlzAPI.GetSKey(thisQQ, domin);
-            string pskey = Common.xlzAPI.GetPSKeyEvent(thisQQ, domin);
+            string skey = Common.api.GetSKey(thisQQ, domin);
+            string pskey = Common.api.GetPSKeyEvent(thisQQ, domin);
             string retCookie = $"uin=o{thisQQ}; skey={skey}; pt2gguin=o{thisQQ}; p_uin=o{thisQQ}; p_skey={pskey};";
             return retCookie;
         }

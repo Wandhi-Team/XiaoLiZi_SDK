@@ -21,7 +21,7 @@ namespace RobotMenuDemo
 
         public void LoadList()
         {
-            MessageBox.Show(Common.xlzAPI.GetThisQQ());
+            MessageBox.Show(Common.api.GetThisQQ());
         }
     }
 }

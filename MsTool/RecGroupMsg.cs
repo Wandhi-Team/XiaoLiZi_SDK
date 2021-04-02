@@ -88,7 +88,7 @@ namespace MsTool
         /// <returns></returns>
         public string GetDragonKing(long thisQQ, long groupQQ)
         {
-            string ck = Common.xlzAPI.GetWebCookiesEvent(thisQQ, "https://qun.qq.com", "715030901", "73");
+            string ck = Common.api.GetWebCookiesEvent(thisQQ, "https://qun.qq.com", "715030901", "73");
             HttpWebRequest hwr = (HttpWebRequest)HttpWebRequest.CreateHttp($"https://qun.qq.com/interactive/honorlist?gc={groupQQ}&type=1");
             hwr.Method = "get";
             hwr.KeepAlive = true;

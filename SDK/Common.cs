@@ -18,12 +18,7 @@ namespace SDK
         /// <summary>
         /// 小栗子API 
         /// </summary>
-        public static API xlzAPI = new API();
-
-        public static void BugLog(object jsonConvert)
-        {
-            throw new NotImplementedException();
-        }
+        public static API api = new API();
 
         /// <summary>
         /// 记录错误日志
@@ -31,7 +26,7 @@ namespace SDK
         /// <param name="log"></param>
         public static void BugLog(string log)
         {
-            string logpath = xlzAPI.GetPluginDataDirectoryEvent() + "XlzLogs";
+            string logpath = api.GetPluginDataDirectoryEvent() + "XlzLogs";
             if (!Directory.Exists(logpath))
             {
                 Directory.CreateDirectory(logpath);
