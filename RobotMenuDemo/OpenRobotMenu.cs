@@ -15,7 +15,7 @@ namespace RobotMenuDemo
             if (form1 == null)
             {
                 form1 = new Form1();
-                form1.FormClosed += Form1_FormClosed; ;
+                form1.FormClosed += Form1_FormClosed;
                 form1.ShowDialog();
             }
             else

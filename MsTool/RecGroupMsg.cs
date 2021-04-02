@@ -10,65 +10,74 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using MsTool.Custom;
+using MsTool.Custom.Interface;
 using SDK;
 using SDK.Events;
 using SDK.Interface;
 using SDK.Model;
+using Unity;
 
 namespace MsTool
 {
-    public class RecGroupMsg : IGroupMessage
+    public class RecGroupMsg :MessageOutGiving, IGroupMessage
     {
         public void ReceviceGroupMsg(GroupMessageEvent e)
         {
-            if (e.SenderQQ == 1000032 || e.ThisQQ == e.SenderQQ)//不处理匿名信息和自己
-            {
-                return;
-            }
-            // Common.xlzAPI.SendGroupMessage(e.ThisQQ, e.MessageGroupQQ, "测试小栗子C# SDK", true);
-            // Common.xlzAPI.RecviceImage(e.MessageContent, e.ThisQQ, e.SenderQQ);
-            //if (e.MessageContent.Contains("转发"))
+            #region 分发群消息
+
+            MessageGiving(e);
+
+            #endregion
+
+            //if (e.SenderQQ == 1000032 || e.ThisQQ == e.SenderQQ)//不处理匿名信息和自己
             //{
-            //    Common.xlzAPI.SendGroupMessage(e.ThisQQ, e.MessageGroupQQ, e.MessageContent);
+            //    return;
             //}
-            if (e.MessageContent.Equals("谁是龙王"))
-            {
-                string lKing = GetDragonKing(e.ThisQQ, e.MessageGroupQQ);
-                if (lKing.Contains("acceptLanguages"))
-                {
-                    dynamic token = new JavaScriptSerializer().Deserialize<dynamic>(lKing);
-                    Dictionary<string, object> json = new JavaScriptSerializer().Deserialize<Dictionary<string, object>>(lKing);
-                    int count = ((ArrayList)json["talkativeList"]).Count;
-                    if (token["gc"] != null && (string)token["gc"] == e.MessageGroupQQ.ToString())
-                    {
-                        Common.xlzAPI.SendGroupMessage(e.ThisQQ, e.MessageGroupQQ, "现任龙王: " + (string)token["talkativeList"][0]["name"] + "(" + Convert.ToString(token["talkativeList"][0]["uin"]) + ")" + " 蝉联天数: " + (string)token["talkativeList"][0]["desc"]);
-                        if (count > 1)
-                        {
-                            List<string> list = new List<string>();
-                            for (int i = 1; i < count; i++)
-                            {
-                                list.Add((string)token["talkativeList"][i]["name"] + "(" + Convert.ToString(token["talkativeList"][i]["uin"]) + ")" + " 蝉联天数: " + (string)token["talkativeList"][i]["desc"]);
-                                if (i > 5)
-                                    break;
-                            }
-                            Common.xlzAPI.SendGroupMessage(e.ThisQQ, e.MessageGroupQQ, "历史龙王: " + Environment.NewLine + string.Join(Environment.NewLine, list));
-                        }
-                    }
-                }
-            }
-            if (e.MessageContent.Equals("群签到"))
-            {
-                Common.xlzAPI.GroupSigninEvent(e.ThisQQ, e.MessageGroupQQ);
-            }
-            if (e.MessageContent.Equals("领红包"))
-            {
-                Common.xlzAPI.GetReceiveRedEnvelopeEvent(e.ThisQQ, e.MessageGroupQQ,e.SenderQQ, "", 2,"");
-            }
-            string picpath = System.Environment.CurrentDirectory + "\\logo.png";
-            if (e.MessageContent.Equals("发图"))
-            {
-                Common.xlzAPI.SendGroupImage(e.ThisQQ, e.MessageGroupQQ, picpath, false);
-            }
+            //// Common.xlzAPI.SendGroupMessage(e.ThisQQ, e.MessageGroupQQ, "测试小栗子C# SDK", true);
+            //// Common.xlzAPI.RecviceImage(e.MessageContent, e.ThisQQ, e.SenderQQ);
+            ////if (e.MessageContent.Contains("转发"))
+            ////{
+            ////    Common.xlzAPI.SendGroupMessage(e.ThisQQ, e.MessageGroupQQ, e.MessageContent);
+            ////}
+            //if (e.MessageContent.Equals("谁是龙王"))
+            //{
+            //    string lKing = GetDragonKing(e.ThisQQ, e.MessageGroupQQ);
+            //    if (lKing.Contains("acceptLanguages"))
+            //    {
+            //        dynamic token = new JavaScriptSerializer().Deserialize<dynamic>(lKing);
+            //        Dictionary<string, object> json = new JavaScriptSerializer().Deserialize<Dictionary<string, object>>(lKing);
+            //        int count = ((ArrayList)json["talkativeList"]).Count;
+            //        if (token["gc"] != null && (string)token["gc"] == e.MessageGroupQQ.ToString())
+            //        {
+            //            Common.xlzAPI.SendGroupMessage(e.ThisQQ, e.MessageGroupQQ, "现任龙王: " + (string)token["talkativeList"][0]["name"] + "(" + Convert.ToString(token["talkativeList"][0]["uin"]) + ")" + " 蝉联天数: " + (string)token["talkativeList"][0]["desc"]);
+            //            if (count > 1)
+            //            {
+            //                List<string> list = new List<string>();
+            //                for (int i = 1; i < count; i++)
+            //                {
+            //                    list.Add((string)token["talkativeList"][i]["name"] + "(" + Convert.ToString(token["talkativeList"][i]["uin"]) + ")" + " 蝉联天数: " + (string)token["talkativeList"][i]["desc"]);
+            //                    if (i > 5)
+            //                        break;
+            //                }
+            //                Common.xlzAPI.SendGroupMessage(e.ThisQQ, e.MessageGroupQQ, "历史龙王: " + Environment.NewLine + string.Join(Environment.NewLine, list));
+            //            }
+            //        }
+            //    }
+            //}
+            //if (e.MessageContent.Equals("群签到"))
+            //{
+            //    Common.xlzAPI.GroupSigninEvent(e.ThisQQ, e.MessageGroupQQ);
+            //}
+            //if (e.MessageContent.Equals("领红包"))
+            //{
+            //    Common.xlzAPI.GetReceiveRedEnvelopeEvent(e.ThisQQ, e.MessageGroupQQ,e.SenderQQ, "", 2,"");
+            //}
+            //string picpath = System.Environment.CurrentDirectory + "\\logo.png";
+            //if (e.MessageContent.Equals("发图"))
+            //{
+            //    Common.xlzAPI.SendGroupImage(e.ThisQQ, e.MessageGroupQQ, picpath, false);
+            //}
         }
 
         /// <summary>

@@ -1,5 +1,4 @@
 ﻿using MsTool;
-using RobotMenuDemo;
 using SDK.Interface;
 using System;
 using System.Collections.Generic;
@@ -17,7 +16,7 @@ namespace RobotCore
             unityContainer.RegisterType<IAppEnableEvent,AppEnable>();
             unityContainer.RegisterType<IRecvicetPrivateMessage, RecPrivateMsg>();
             unityContainer.RegisterType<IGroupMessage, RecGroupMsg>();
-            unityContainer.RegisterType<IAppSetting, OpenRobotMenu>();
+            unityContainer.RegisterType<IAppSetting, Setting>();
             unityContainer.RegisterType<IEventcallBack, RobotEventcallBack>();
         }
     }

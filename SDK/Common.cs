@@ -20,6 +20,11 @@ namespace SDK
         /// </summary>
         public static API xlzAPI = new API();
 
+        public static void BugLog(object jsonConvert)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// 记录错误日志
         /// </summary>

@@ -8,16 +8,18 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using MsTool.Custom;
 using SDK;
 using SDK.Events;
 using SDK.Interface;
 
 namespace MsTool
 {
-    public class RecPrivateMsg : IRecvicetPrivateMessage
+    public class RecPrivateMsg : MessageOutGiving, IRecvicetPrivateMessage
     {
         public void RecvicetPrivateMsg(PrivateMessageEvent e)
         {
+            MessageGiving(e);
             //if (e.ThisQQ == e.SenderQQ)
             //{
             //    return;
@@ -61,7 +63,7 @@ namespace MsTool
             {
                 if (File.Exists(picpath))
                 {
-                    string ret = Common.xlzAPI.SetAnnouncementEvent(e.ThisQQ, 247681297, "小栗子发公告", "测试发公告", picpath, null,true, true, true, true, true);
+                    string ret = Common.xlzAPI.SetAnnouncementEvent(e.ThisQQ, 247681297, "小栗子发公告", "测试发公告", picpath, null, true, true, true, true, true);
                 }
             }
             //if (e.MessageContent.Contains("[Shake,name="))
@@ -84,7 +86,7 @@ namespace MsTool
             }
             if (e.MessageContent.Equals("删成员"))
             {
-                Common.xlzAPI.DelGroupMemberByBatch(e.ThisQQ, 480325208,new List<long>() {2403875843, 2261002716 }, false);
+                Common.xlzAPI.DelGroupMemberByBatch(e.ThisQQ, 480325208, new List<long>() { 2403875843, 2261002716 }, false);
             }
             if (e.MessageContent.Equals("简略"))
             {
@@ -96,6 +98,6 @@ namespace MsTool
                 Common.xlzAPI.SendFriendImage(e.ThisQQ, e.SenderQQ, picpath, false);
             }
         }
-        
+
     }
 }

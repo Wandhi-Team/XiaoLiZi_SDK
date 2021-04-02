@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SDK;
 
 namespace RobotMenuDemo
 {
@@ -15,6 +16,12 @@ namespace RobotMenuDemo
         public Form1()
         {
             InitializeComponent();
+            LoadList();
+        }
+
+        public void LoadList()
+        {
+            MessageBox.Show(Common.xlzAPI.GetThisQQ());
         }
     }
 }

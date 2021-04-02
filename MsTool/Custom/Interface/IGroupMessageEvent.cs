@@ -2,8 +2,8 @@
 
 namespace MsTool.Custom.Interface
 {
-    public interface IGroupMessageEvent
+    public interface IGroupMessageEvent:IMessageEvent
     {
-        void MessageEvent(PrivateMessageEvent messageEvent);
+        void MessageEvent(GroupMessageEvent messageEvent);
     }
 }
