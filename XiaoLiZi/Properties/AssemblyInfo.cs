@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("XiaoLiZi")]
+[assembly: AssemblyTitle("小栗子插件")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("WorkGroup")]
 [assembly: AssemblyProduct("XiaoLiZi")]
-[assembly: AssemblyCopyright("Copyright © WorkGroup 2020")]
+[assembly: AssemblyCopyright("作者版权所有,请尊重并使用正版")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

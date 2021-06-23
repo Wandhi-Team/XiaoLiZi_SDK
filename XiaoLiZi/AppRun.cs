@@ -52,8 +52,8 @@ namespace RobotCore
         private static void SetAppInfo(AppInfo appInfo)
         {
             appInfo.sdkv = "2.8.8.1";
-            appInfo.appname = "集市工具箱";
-            appInfo.author = "Wandhi";
+            appInfo.appname = "大猫娱乐";
+            appInfo.author = "祈晴宝宝";
             appInfo.describe = string.Concat(new string[]
             {
                 "多功能插件,功能未知"

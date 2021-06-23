@@ -30,11 +30,11 @@ namespace MsTool
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.contail_Main = new System.Windows.Forms.SplitContainer();
             this.lb_QList = new Sunny.UI.UIListBox();
@@ -46,11 +46,11 @@ namespace MsTool
             this.btn_ReferGroups = new Sunny.UI.UIButton();
             this.dgv_BatchQuit = new Sunny.UI.UIDataGridView();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.txt_Groups = new System.Windows.Forms.TextBox();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.btn_BatchAdd = new Sunny.UI.UIButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.txt_Log = new Sunny.UI.UITextBox();
-            this.txt_Groups = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contail_Main)).BeginInit();
             this.contail_Main.Panel1.SuspendLayout();
@@ -73,7 +73,7 @@ namespace MsTool
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 35);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(894, 447);
+            this.panel2.Size = new System.Drawing.Size(1046, 698);
             this.panel2.TabIndex = 3;
             // 
             // contail_Main
@@ -89,8 +89,8 @@ namespace MsTool
             // contail_Main.Panel2
             // 
             this.contail_Main.Panel2.Controls.Add(this.contain_Right);
-            this.contail_Main.Size = new System.Drawing.Size(894, 447);
-            this.contail_Main.SplitterDistance = 161;
+            this.contail_Main.Size = new System.Drawing.Size(1046, 698);
+            this.contail_Main.SplitterDistance = 188;
             this.contail_Main.TabIndex = 0;
             // 
             // lb_QList
@@ -105,7 +105,7 @@ namespace MsTool
             this.lb_QList.MinimumSize = new System.Drawing.Size(1, 1);
             this.lb_QList.Name = "lb_QList";
             this.lb_QList.Padding = new System.Windows.Forms.Padding(2);
-            this.lb_QList.Size = new System.Drawing.Size(161, 447);
+            this.lb_QList.Size = new System.Drawing.Size(188, 698);
             this.lb_QList.TabIndex = 0;
             this.lb_QList.Text = "uiListBox1";
             this.lb_QList.Click += new System.EventHandler(this.lb_QList_Click);
@@ -124,23 +124,23 @@ namespace MsTool
             // contain_Right.Panel2
             // 
             this.contain_Right.Panel2.Controls.Add(this.txt_Log);
-            this.contain_Right.Size = new System.Drawing.Size(729, 447);
-            this.contain_Right.SplitterDistance = 343;
+            this.contain_Right.Size = new System.Drawing.Size(854, 698);
+            this.contain_Right.SplitterDistance = 535;
             this.contain_Right.TabIndex = 2;
             // 
             // uiTabControl1
             // 
             this.uiTabControl1.Controls.Add(this.tabPage3);
             this.uiTabControl1.Controls.Add(this.tabPage4);
-            this.uiTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.uiTabControl1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.uiTabControl1.ItemSize = new System.Drawing.Size(150, 40);
-            this.uiTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.uiTabControl1.Location = new System.Drawing.Point(58, 80);
             this.uiTabControl1.MainPage = "";
             this.uiTabControl1.Name = "uiTabControl1";
+            this.uiTabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.uiTabControl1.SelectedIndex = 0;
-            this.uiTabControl1.Size = new System.Drawing.Size(729, 343);
+            this.uiTabControl1.Size = new System.Drawing.Size(730, 343);
             this.uiTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.uiTabControl1.TabIndex = 1;
             // 
@@ -150,7 +150,7 @@ namespace MsTool
             this.tabPage3.Controls.Add(this.uiGroupBox1);
             this.tabPage3.Location = new System.Drawing.Point(0, 40);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(729, 303);
+            this.tabPage3.Size = new System.Drawing.Size(730, 303);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "加群/退群";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -196,42 +196,42 @@ namespace MsTool
             // 
             // dgv_BatchQuit
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.dgv_BatchQuit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.dgv_BatchQuit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_BatchQuit.BackgroundColor = System.Drawing.Color.White;
             this.dgv_BatchQuit.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_BatchQuit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_BatchQuit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_BatchQuit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_BatchQuit.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_BatchQuit.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_BatchQuit.EnableHeadersVisualStyles = false;
             this.dgv_BatchQuit.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.dgv_BatchQuit.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.dgv_BatchQuit.Location = new System.Drawing.Point(6, 62);
             this.dgv_BatchQuit.Name = "dgv_BatchQuit";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_BatchQuit.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dgv_BatchQuit.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("微软雅黑", 12F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_BatchQuit.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgv_BatchQuit.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_BatchQuit.RowTemplate.Height = 29;
             this.dgv_BatchQuit.SelectedIndex = -1;
             this.dgv_BatchQuit.ShowGridLine = true;
@@ -253,12 +253,21 @@ namespace MsTool
             this.uiGroupBox1.TabIndex = 6;
             this.uiGroupBox1.Text = "批量加群";
             // 
+            // txt_Groups
+            // 
+            this.txt_Groups.Location = new System.Drawing.Point(3, 62);
+            this.txt_Groups.Multiline = true;
+            this.txt_Groups.Name = "txt_Groups";
+            this.txt_Groups.Size = new System.Drawing.Size(276, 230);
+            this.txt_Groups.TabIndex = 3;
+            // 
             // uiLabel1
             // 
             this.uiLabel1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.uiLabel1.Location = new System.Drawing.Point(3, 21);
             this.uiLabel1.Name = "uiLabel1";
             this.uiLabel1.Size = new System.Drawing.Size(145, 36);
+            this.uiLabel1.Style = Sunny.UI.UIStyle.Custom;
             this.uiLabel1.TabIndex = 2;
             this.uiLabel1.Text = "每行一个群号：";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -298,25 +307,17 @@ namespace MsTool
             this.txt_Log.Multiline = true;
             this.txt_Log.Name = "txt_Log";
             this.txt_Log.Padding = new System.Windows.Forms.Padding(5);
-            this.txt_Log.Size = new System.Drawing.Size(729, 100);
+            this.txt_Log.Size = new System.Drawing.Size(854, 159);
             this.txt_Log.TabIndex = 0;
-            // 
-            // txt_Groups
-            // 
-            this.txt_Groups.Location = new System.Drawing.Point(3, 62);
-            this.txt_Groups.Multiline = true;
-            this.txt_Groups.Name = "txt_Groups";
-            this.txt_Groups.Size = new System.Drawing.Size(276, 230);
-            this.txt_Groups.TabIndex = 3;
             // 
             // MainSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 482);
+            this.ClientSize = new System.Drawing.Size(1046, 733);
             this.Controls.Add(this.panel2);
             this.Name = "MainSetting";
-            this.Text = "集市助手";
+            this.Text = "";
             this.panel2.ResumeLayout(false);
             this.contail_Main.Panel1.ResumeLayout(false);
             this.contail_Main.Panel2.ResumeLayout(false);

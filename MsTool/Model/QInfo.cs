@@ -21,4 +21,23 @@ namespace MsTool.Model
     {
         public Dictionary<string, QInfo> QQlist { get; set; }
     }
+
+    /// <summary>
+    /// 机器人列表
+    /// </summary>
+    public class QInfoList
+    {
+        public long QQ { set; get; }
+        public string NickName { set; get; }
+    }
+
+    /// <summary>
+    /// qq群列表
+    /// </summary>
+    public class GroupInfoList
+    {
+        public long Group { set; get; }
+        public string GroupName { set; get; }
+    }
+
 }

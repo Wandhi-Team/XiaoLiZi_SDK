@@ -90,6 +90,12 @@
     <Compile Include="Custom\Interface\IGroupMessageEvent.cs" />
     <Compile Include="Custom\Interface\IMessageEvent.cs" />
     <Compile Include="Custom\MessageOutGiving.cs" />
+    <Compile Include="Form\CatSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\CatSetting.Designer.cs">
+      <DependentUpon>CatSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\CustomDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     </Compile>
     <Compile Include="Form\MainSetting.Designer.cs">
       <DependentUpon>MainSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Pages\LspSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Pages\LspSetting.Designer.cs">
+      <DependentUpon>LspSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\GroupInfo.cs" />
     <Compile Include="Model\QInfo.cs" />
@@ -117,6 +129,9 @@
     <None Include="Properties\DataSources\SDK.Model.GroupInfo.datasource" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form\CatSetting.resx">
+      <DependentUpon>CatSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\MainSetting.resx">
       <DependentUpon>MainSetting.cs</DependentUpon>
     </EmbeddedResource>
