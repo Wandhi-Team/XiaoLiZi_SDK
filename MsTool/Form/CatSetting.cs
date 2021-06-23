@@ -1,4 +1,5 @@
-﻿using MsTool.Model;
+﻿using MsTool.Form.Pages;
+using MsTool.Model;
 using Newtonsoft.Json;
 using SDK;
 using SDK.Model;
@@ -18,11 +19,21 @@ namespace MsTool.Form
     public partial class CatSetting : UIAsideHeaderMainFooterFrame
     {
         public Dictionary<string, QInfo> Robots = new Dictionary<string, QInfo>();
+        
 
         public CatSetting()
         {
             InitializeComponent();
             LoadRobot();
+        }
+
+
+        public void SettingInit()
+        {
+            Aside.TabControl = MainTabControl;
+            AddPage(new RobotInfo(), 0);
+
+            Aside.SelectFirst();
         }
 
         /// <summary>
@@ -36,6 +47,7 @@ namespace MsTool.Form
                 var robots = new List<QInfoList>();
                 foreach (var item in qqs.QQlist)
                 {
+                    item.Value.QQ = long.Parse(item.Key);
                     Robots.Add(item.Key, item.Value);
                     robots.Add(new QInfoList
                     {
@@ -61,7 +73,7 @@ namespace MsTool.Form
         {
             await Task.Run(() =>
             {
-                var groups = Common.api.Getgrouplist(QQ).Select(a => new GroupInfoList { Group = a.GroupID, GroupName = $"{a.GroupName}({a.GroupID})" });
+                var groups = Common.api.Getgrouplist(QQ).Select(a => new GroupInfoList { Group = a.GroupID, GroupName = $"{a.GroupName}({a.GroupID})" }).ToList();
 
                 cmb_Groups.DisplayMember = "GroupName";
                 cmb_Groups.ValueMember = "Group";
