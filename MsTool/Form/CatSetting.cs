@@ -1,4 +1,5 @@
-﻿using MsTool.Form.Pages;
+﻿using MsTool.Extensions;
+using MsTool.Form.Pages;
 using MsTool.Model;
 using Newtonsoft.Json;
 using SDK;
@@ -19,19 +20,40 @@ namespace MsTool.Form
     public partial class CatSetting : UIAsideHeaderMainFooterFrame
     {
         public Dictionary<string, QInfo> Robots = new Dictionary<string, QInfo>();
-        
+        public QInfo currentQQ;
+        public long currentGroup;
+
+        #region 配置信息
+        public Config configHelper = new Config();
+        public SettingConfig settingConfig;
+        #endregion
+
+
+        #region 窗体
+
+        private RobotInfo robotInfo;
+        private LspSetting lspSetting;
+        #endregion
 
         public CatSetting()
         {
             InitializeComponent();
+
+            robotInfo = new RobotInfo(ref currentQQ);
+            lspSetting = new LspSetting();
+
+            settingConfig = configHelper.GetConfig();
+
             LoadRobot();
+            SettingInit();
         }
 
 
         public void SettingInit()
         {
             Aside.TabControl = MainTabControl;
-            AddPage(new RobotInfo(), 0);
+            AddPage(robotInfo, 0);
+            AddPage(lspSetting, 1);
 
             Aside.SelectFirst();
         }
@@ -65,6 +87,8 @@ namespace MsTool.Form
                 if (robots.Count > 0)
                 {
                     cmb_Robot.Select(0, 1);
+
+                    cmb_Robot.SelectedItem = robots.First();
                 }
             });
         }
@@ -89,7 +113,28 @@ namespace MsTool.Form
         private void cmb_Robot_SelectedIndexChanged(object sender, EventArgs e)
         {
             var robot = (QInfoList)cmb_Robot.SelectedItem;
+            currentQQ = Robots[robot.QQ.ToString()];
             LoadGroup(robot.QQ);
+
+
+            //初始化界面信息
+            robotInfo.InitInfo(ref currentQQ);
+
+        }
+
+        private void cmb_Groups_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var group = (GroupInfoList)cmb_Groups.SelectedItem;
+            currentGroup = group.Group;
+            
+            
+            //加载群配置
+            var groupSetting = new Settings();
+            if (settingConfig != null && settingConfig.GroupSettings.ContainsKey(currentGroup))
+            {
+                groupSetting = settingConfig.GroupSettings[currentGroup];
+            }
+            lspSetting.InitInfo(groupSetting.LspGroupConfig);
         }
     }
 }

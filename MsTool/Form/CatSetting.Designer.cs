@@ -29,8 +29,8 @@ namespace MsTool.Form
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("机器人信息");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("涩图配置");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("机器人信息");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("涩图配置");
             this.cmb_Robot = new Sunny.UI.UIComboBox();
             this.cmb_Groups = new Sunny.UI.UIComboBox();
             this.uiLabel1 = new Sunny.UI.UILabel();
@@ -54,13 +54,13 @@ namespace MsTool.Form
             // 
             // Aside
             // 
-            treeNode9.Name = "机器人信息";
-            treeNode9.Text = "机器人信息";
-            treeNode10.Name = "涩图配置";
-            treeNode10.Text = "涩图配置";
+            treeNode1.Name = "机器人信息";
+            treeNode1.Text = "机器人信息";
+            treeNode2.Name = "涩图配置";
+            treeNode2.Text = "涩图配置";
             this.Aside.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode10});
+            treeNode1,
+            treeNode2});
             this.Aside.Size = new System.Drawing.Size(138, 415);
             // 
             // cmb_Robot
@@ -80,9 +80,10 @@ namespace MsTool.Form
             // 
             // cmb_Groups
             // 
+            this.cmb_Groups.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
             this.cmb_Groups.FillColor = System.Drawing.Color.White;
             this.cmb_Groups.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.cmb_Groups.Location = new System.Drawing.Point(449, 13);
+            this.cmb_Groups.Location = new System.Drawing.Point(438, 13);
             this.cmb_Groups.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmb_Groups.MinimumSize = new System.Drawing.Size(63, 0);
             this.cmb_Groups.Name = "cmb_Groups";
@@ -90,6 +91,7 @@ namespace MsTool.Form
             this.cmb_Groups.Size = new System.Drawing.Size(213, 29);
             this.cmb_Groups.TabIndex = 1;
             this.cmb_Groups.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cmb_Groups.SelectedIndexChanged += new System.EventHandler(this.cmb_Groups_SelectedIndexChanged);
             // 
             // uiLabel1
             // 
@@ -106,7 +108,7 @@ namespace MsTool.Form
             // 
             this.uiLabel2.AutoSize = true;
             this.uiLabel2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel2.Location = new System.Drawing.Point(403, 17);
+            this.uiLabel2.Location = new System.Drawing.Point(396, 17);
             this.uiLabel2.Name = "uiLabel2";
             this.uiLabel2.Size = new System.Drawing.Size(42, 21);
             this.uiLabel2.TabIndex = 3;

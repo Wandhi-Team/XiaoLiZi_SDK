@@ -85,6 +85,7 @@
     <Compile Include="AppEnable.cs" />
     <Compile Include="AppSetting.cs" />
     <Compile Include="CommonEvent\AppEnable.cs" />
+    <Compile Include="Extensions\Config.cs" />
     <Compile Include="Custom\Interface\ICommonEvent.cs" />
     <Compile Include="Custom\Interface\IFriendMessageEvent.cs" />
     <Compile Include="Custom\Interface\IGroupMessageEvent.cs" />
@@ -119,6 +120,7 @@
     </Compile>
     <Compile Include="Model\GroupInfo.cs" />
     <Compile Include="Model\QInfo.cs" />
+    <Compile Include="Model\SettingConfig.cs" />
     <Compile Include="RecGroupMsg.cs" />
     <Compile Include="RecPrivateMsg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\MainSetting.resx">
       <DependentUpon>MainSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Pages\LspSetting.resx">
+      <DependentUpon>LspSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Pages\RobotInfo.resx">
       <DependentUpon>RobotInfo.cs</DependentUpon>
